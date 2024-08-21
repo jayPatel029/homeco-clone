@@ -15,77 +15,83 @@ class DetailedViewPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 10, top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.white,
-                          border:
-                              Border.all(width: 2, color: Colors.grey.shade300)),
-                      height: 60,
-                      width: 150,
-                      child: Row(
-                        // mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 4),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.grey.shade300),
-                              child: IconButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const HomePage()));
-                                },
-                                icon: const Icon(
-                                  Icons.keyboard_backspace_sharp,
-                                  size: 32,
+              SingleChildScrollView(
+                physics: const NeverScrollableScrollPhysics(),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10, top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.white,
+                            border:
+                                Border.all(width: 2, color: Colors.grey.shade300)),
+                        height: 60,
+                        width: 150,
+                        child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 4),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.grey.shade300),
+                                child: IconButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const HomePage()));
+                                  },
+                                  icon: const Icon(
+                                    Icons.keyboard_backspace_sharp,
+                                    size: 32,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Text(
-                              'Go Back',
-                              style: GoogleFonts.rubik(
-                                  textStyle: const TextStyle(
-                                fontSize: 18,
-                              )),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8),
+                              child: Text(
+                                'Go Back',
+                                style: GoogleFonts.rubik(
+                                    textStyle: const TextStyle(
+                                  fontSize: 18,
+                                )),
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                              border: Border.all(
-                                  width: 2, color: Colors.grey.shade300)),
-                          child: const Icon(
-                            Icons.more_vert,
-                            size: 25,
-                          ),
-                      ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white,
+                                border: Border.all(
+                                    width: 2, color: Colors.grey.shade300)),
+                            child: const Icon(
+                              Icons.more_vert,
+                              size: 25,
+                            ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-              
-              
+
+
+// building image and icons
+            
+            
               const SizedBox(
                 height: 10,
               ),
@@ -129,7 +135,7 @@ class DetailedViewPage extends StatelessWidget {
                               child: Container(
                                 height: 42,
                                 width: 42,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: Colors.black26,
                                     ),
@@ -143,7 +149,7 @@ class DetailedViewPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 300,),
+                      const SizedBox(height: 300,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -208,65 +214,74 @@ class DetailedViewPage extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 10,),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Text(
-                      '\$3,822',
-                      maxLines: 2,
-                      style: GoogleFonts.rubik(
-                        textStyle: const TextStyle(
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black
+
+// rent and icons
+              
+              const SizedBox(height: 10,),
+              SingleChildScrollView(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: Text(
+                        '\$3,822',
+                        maxLines: 2,
+                        style: GoogleFonts.rubik(
+                          textStyle: const TextStyle(
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(width: 150,),
+                    const SizedBox(width: 150,),
 
-                  Container(
-                    height: 42,
-                    width: 42,
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.grey.shade200
-                      ),
-                      shape: BoxShape.circle,
-                      color: Colors.white70,
-                    ),
-                    child: const Icon(
-                      Icons.bookmark_border_outlined,
-                      size: 24,
-                      color: Colors.black54,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: Container(
+                    Container(
                       height: 42,
                       width: 42,
                       decoration: BoxDecoration(
                         border: Border.all(
-                            width: 2,
-                            color: Colors.grey.shade200
+                          width: 2,
+                          color: Colors.grey.shade200
                         ),
                         shape: BoxShape.circle,
                         color: Colors.white70,
                       ),
                       child: const Icon(
-                        Icons.share_outlined,
+                        Icons.bookmark_border_outlined,
                         size: 24,
                         color: Colors.black54,
                       ),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Container(
+                        height: 42,
+                        width: 42,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              width: 2,
+                              color: Colors.grey.shade200
+                          ),
+                          shape: BoxShape.circle,
+                          color: Colors.white70,
+                        ),
+                        child: const Icon(
+                          Icons.share_outlined,
+                          size: 24,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(height: 16,),
+              
+              
+// resedence and info            
+              
+              const SizedBox(height: 16,),
               Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
@@ -280,7 +295,7 @@ class DetailedViewPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 6,),
+              const SizedBox(height: 6,),
 
               Padding(
                 padding: const EdgeInsets.only(left: 23.0, right: 10),
@@ -319,28 +334,29 @@ class DetailedViewPage extends StatelessWidget {
                 ),
               ),
 
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
-                  child: Text('Here at Market Street Village, you\'ll have all the benefits of living downtown without sacrificing convenience. Our hip downtown location means you\'re able to walk to nearby parks, festivals and events, hitting up all of San Diego\'s hotspots on foot or the nearby trolley line. Whoever said downtown apartments are small hasn\'t been to Market Street Village, where you\'ll have a fully equipped kitchen complete with modern stainless steel appliances, walk-in closets, oversized windows, an in-home washer and dryer and a rooftop deck that\'s perfect for hosting friends and family for dinner. Topped with community amenities like our media room with theater seating, heated swimming pool, business center and clubhouse, you\'ve never experienced downtown living like that at Market Street Village.',
-                    style: GoogleFonts.roboto(
-                      textStyle: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16
-                      ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
+                child: Text('Here at Market Street Village, you\'ll have all the benefits of living downtown without sacrificing convenience. Our hip downtown location means you\'re able to walk to nearby parks, festivals and events, hitting up all of San Diego\'s hotspots on foot or the nearby trolley line. Whoever said downtown apartments are small hasn\'t been to Market Street Village, where you\'ll have a fully equipped kitchen complete with modern stainless steel appliances, walk-in closets, oversized windows, an in-home washer and dryer and a rooftop deck that\'s perfect for hosting friends and family for dinner. Topped with community amenities like our media room with theater seating, heated swimming pool, business center and clubhouse, you\'ve never experienced downtown living like that at Market Street Village.',
+                  style: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16
                     ),
-
-
-
                   ),
                 ),
+              ),
+
+              Row(
+
               ),
 
             ],
           ),
         ),
       ),
+
+
     );
   }
 }
